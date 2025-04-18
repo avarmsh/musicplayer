@@ -1,5 +1,6 @@
 package musicplayer;
 
+import java.util.Collections;
 import java.util.*;
 
 public class Playlist {
@@ -64,5 +65,20 @@ public class Playlist {
 
     public String getTitle() {
         return this.title;
+    }
+
+    public void shufflePlay(User user) {
+        if (!user.equals(owner)) {
+            System.out.println("You don't have permission to play this playlist.");
+            return;
+        }
+
+        ArrayList<Music> shuffled = new ArrayList<>(playlist);
+        Collections.shuffle(shuffled);
+
+        System.out.println("Playing shuffled playlist:");
+        for (Music music : shuffled) {
+            music.play();
+        }
     }
 }
