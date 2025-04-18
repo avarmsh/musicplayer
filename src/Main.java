@@ -57,6 +57,9 @@ public class Main {
             System.out.println("\n Playing Playlist");
             myPlaylist.playPlaylist(u2);
 
+            System.out.println("\n Shuffled Playlist ");
+            myPlaylist.shufflePlay(u2);
+
             System.out.println("\n Following Users");
             u1.follow(u2);
             u1.follow(u3);
